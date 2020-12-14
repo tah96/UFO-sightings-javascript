@@ -33,7 +33,7 @@
             <div class="panel panel-default">
               <div class="panel-heading">Filter Search</div>
               <div class="panel-body">
-                <form>
+                <form id="dateform">
                   <div class="form-group">
                     <ul class="list-group" id="filters">
                       <li class="filter list-group-item">
@@ -43,52 +43,34 @@
                     </ul>
                   </div>
                 </form>
-                <form>
+                <form id="cityform">
                   <div class="form-group">
                     <ul class="list-group" id="filters">
                       <li class="filter list-group-item">
-                        <label for="date">Select a City</label>
-                        <div class="dropdown">
-                          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Citys
-                          </button>
-                          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" id="City">
-                            <ul class="dropdown-item">New dropdown test</ul>
-                            <ul class="dropdown-item">New dropdown test</ul>
-                            <ul class="dropdown-item">New dropdown test</ul>
-                          </div>
-                        </div>
+                        <label for="city">Enter a City</label>
+                        <input class="form-control" id="cityInput" type="text" placeholder="benton">
                       </li>
                     </ul>
                   </div>
                 </form>
-                <form>
+                <form id="stateform">
                   <div class="form-group">
                     <ul class="list-group" id="filters">
                       <li class="filter list-group-item">
-                        <label for="date">Select a State</label>
-                        <div class="dropdown">
-                          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Citys
-                          </button>
-                          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" id="State">
-                            <ul class="dropdown-item">New dropdown test</ul>
-                            <ul class="dropdown-item">New dropdown test</ul>
-                            <ul class="dropdown-item">New dropdown test</ul>
-                          </div>
-                        </div>
+                        <label for="state">Enter a State (2-Letter Abbrev)</label>
+                        <input class="form-control" id="stateInput" type="text" placeholder="Example 'ca' = California ">
                       </li>
                     </ul>
                   </div>
                 </form>
-                <form>
+                <form id="countryform">
                   <div class="form-group">
                     <ul class="list-group" id="filters">
                       <li class="filter list-group-item">
                         <label for="date">Select a Country</label>
                         <div class="dropdown">
                           <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Citys
+                            Country
                           </button>
                           <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" id="Country">
                             <ul class="dropdown-item">New dropdown test</ul>
@@ -100,12 +82,12 @@
                     </ul>
                   </div>
                 </form>
-                <form>
+                <form id="shapeform">
                   <div class="form-group">
                     <ul class="list-group" id="filters">
                       <li class="filter list-group-item">
-                        <label for="date">Enter a Shape</label>
-                        <input class="form-control" id="datetime" type="text" placeholder="1/11/2011">
+                        <label for="shape">Enter a Shape</label>
+                        <input class="form-control" id="shapeInput" type="text" placeholder="triangle">
                       </li>
                     </ul>
                   </div>
