@@ -48,7 +48,7 @@
                     <ul class="list-group" id="filters">
                       <li class="filter list-group-item">
                         <label for="city">Enter a City</label>
-                        <input class="form-control" id="cityInput" type="text" placeholder="benton">
+                        <input class="form-control" id="city" type="text" placeholder="benton">
                       </li>
                     </ul>
                   </div>
@@ -58,7 +58,7 @@
                     <ul class="list-group" id="filters">
                       <li class="filter list-group-item">
                         <label for="state">Enter a State (2-Letter Abbrev)</label>
-                        <input class="form-control" id="stateInput" type="text" placeholder="Example 'ca' = California ">
+                        <input class="form-control" id="state" type="text" placeholder="Example 'ca' = California ">
                       </li>
                     </ul>
                   </div>
@@ -67,17 +67,8 @@
                   <div class="form-group">
                     <ul class="list-group" id="filters">
                       <li class="filter list-group-item">
-                        <label for="date">Select a Country</label>
-                        <div class="dropdown">
-                          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Country
-                          </button>
-                          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" id="Country">
-                            <ul class="dropdown-item">New dropdown test</ul>
-                            <ul class="dropdown-item">New dropdown test</ul>
-                            <ul class="dropdown-item">New dropdown test</ul>
-                          </div>
-                        </div>
+                        <label for="country">Enter a Country (2-Letter Abbrev)</label>
+                        <input class="form-control" id="country" type="text" placeholder="Example 'us' = United States ">
                       </li>
                     </ul>
                   </div>
@@ -87,11 +78,10 @@
                     <ul class="list-group" id="filters">
                       <li class="filter list-group-item">
                         <label for="shape">Enter a Shape</label>
-                        <input class="form-control" id="shapeInput" type="text" placeholder="triangle">
+                        <input class="form-control" id="shape" type="text" placeholder="triangle">
                       </li>
                     </ul>
                   </div>
-                  <button id="filter-btn" type="button" class="btn btn-default">Filter Table</button>
                 </form>
               </div>
             </div>

@@ -20,15 +20,13 @@ tableData.forEach((UFOsighting) => {
     });    
 });
 
-// Select Button and Form
-
-var button = d3.select("#filter-btn");
+// Select Forms
 var form = d3.selectAll(".tablefilter");
 
 
-// Turn events on and base off runEnter function
+// Turn events on and run off runEnter function
 var parameters = {};
-form.on("change",runEnter);
+form.on("change",runEnter).on("submit",runEnter);
 
 // runEnter function that will run when button is clicked or "enter" key pressed
 function runEnter() {
@@ -48,6 +46,7 @@ function runEnter() {
     console.log(inputValue);
     console.log(inputID);
 
+    //if statemeent to add or remove from parameters based on user input
     if (inputValue === "") {
         delete parameters[inputID];
     }
@@ -56,9 +55,10 @@ function runEnter() {
     };
 
     // Capture the filtered data
-
-    Object.entries(parameters).forEach((entry) => {
-        filteredData = tableData.filter((UFOsighting) => UFOsighting.entry[0]);
+    var filteredData = tableData
+    console.log(parameters);
+    Object.entries(parameters).forEach(([key, value]) => {
+        filteredData = filteredData.filter(UFOsighting => UFOsighting[key] === value);
         console.log(filteredData);
     });
     
@@ -77,3 +77,7 @@ function runEnter() {
     });
 
   };
+
+function runButton() {
+    runEnter
+};
