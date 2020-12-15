@@ -20,42 +20,15 @@ tableData.forEach((UFOsighting) => {
     });    
 });
 
-// Create Variables for City, state and country to hold data form tableData
-var cities = tableData.map(tableData => tableData.city);
-var states = tableData.map(tableData => tableData.state);
-var countries = tableData.map(tableData => tableData.country);
-
-// Create unique function that will be used to remove duplicates
-const unique = (value, index, self) => {
-    return self.indexOf(value) === index
-};
-
-var unique_states = states.filter(unique);
-var unique_cities = cities.filter(unique);
-var unique_countries = countries.filter(unique);
-console.log(unique_states);
-console.log(unique_cities);
-console.log(unique_countries);
-
-//unique_states.forEach((state) => {
-    //SDropdownItem = stateDropdown.append("ul");
-    //SDropdownItem.text(state)
-//});
-
 // Select Button and Form
 
 var button = d3.select("#filter-btn");
-var dateform = d3.select("#dateform");
-var stateform = d3.select("#stateform")
-var cityform = d3.select("#cityform")
-var countryform = d3.select("#countryform")
-var shapeform = d3.select("#shapeform")
+var form = d3.selectAll(".tablefilter");
+
 
 // Turn events on and base off runEnter function
-button.on("click", runEnter);
-dateform.on("submit",runEnter);
-stateform.on("submit",runEnter);
-cityform.on("submit",runEnter);
+var parameters = {};
+form.on("change",runEnter);
 
 // runEnter function that will run when button is clicked or "enter" key pressed
 function runEnter() {
@@ -64,21 +37,30 @@ function runEnter() {
     d3.event.preventDefault();
   
     // Select the input element and get the raw HTML node
-    var inputElement = d3.select("#datetime");
-    var stateElement = d3.select("#stateInput");
+    var inputElement = d3.select(this).select("input");
+    //var stateElement = d3.select("#stateInput");
   
     // Get the value property of the input element
     var inputValue = inputElement.property("value");
-    var stateValue = stateElement.property("value");
+    var inputID = inputElement.attr("id");
   
     // Print the value to the console
     console.log(inputValue);
-    console.log(stateValue);
+    console.log(inputID);
+
+    if (inputValue === "") {
+        delete parameters[inputID];
+    }
+    else {
+        parameters[inputID] = inputValue;
+    };
 
     // Capture the filtered data
 
-    var filteredData = tableData.filter(UFOsighting => UFOsighting.datetime === inputValue || UFOsighting.state === stateValue);
-    console.log(filteredData);
+    Object.entries(parameters).forEach((entry) => {
+        filteredData = tableData.filter((UFOsighting) => UFOsighting.entry[0]);
+        console.log(filteredData);
+    });
     
 
     // Remove previous data in HTML table so when code is run it only returns data for filteredData
